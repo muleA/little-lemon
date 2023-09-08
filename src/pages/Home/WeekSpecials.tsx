@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import bruschettaImage from './assets/bruschetta.jpg';
 import greekSaladImage from './assets/greek-salad.jpg';
 import lemonDessertImage from './assets/lemon-dessert.jpg';
+import './WeekSpecials.css';
 import MealCard from './MealCard';
 
 const meals = [
@@ -31,23 +32,16 @@ const meals = [
 
 const WeekSpecials = () => {
   return (
-    <section className="container mx-36 overflow-hidden">
-      <div className="grid grid-cols-3 grid-rows-[auto,auto] gap-5">
-        <div className="col-span-3 md:col-span-2 week-specials-header flex justify-between items-center mb-6">
-          <h2 className="text-2xl font-normal leading-none font-markazi">
-            This week specials!
-          </h2>
-          <Link
-            to="/orderOnline"
-            className="button-primary"
-          >
-            Online Menu
-          </Link>
-        </div>
-        {meals.map((meal, index) => (
-          <MealCard key={index} meal={meal} />
-        ))}
+    <section className="container grid week-specials mx-36 overflow-hidden">
+      <div className="week-specials-header">
+        <h2>This week specials!</h2>
+        <Link className="button-primary" to={('orderOnline')}>
+          Online Menu
+        </Link>
       </div>
+      {meals.map((meal, index) => 
+        <MealCard key={index} meal={meal} />
+      )}
     </section>
   );
 };
