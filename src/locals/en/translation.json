@@ -1,0 +1,9 @@
+{
+    "common": {
+      "welcome": "Welcome to our app"
+    },
+    "button": {
+      "label": "Click me"
+    }
+  }
+  
