@@ -8,6 +8,8 @@ import ConfirmedBooking from "./pages/Bookings/ConfirmedBooking";
 import Home from "./pages/Home";
 import NotFound from "./pages/NotFound";
 import UnderConstruction from "./pages/UnderConstruction";
+import AboutUsPage from "./pages/about";
+import Menus from "./pages/menu";
 
 const App = () => {
   const location = useLocation();
@@ -22,8 +24,8 @@ const App = () => {
       <Layout>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/about" element={<UnderConstruction />} />
-          <Route path="/menu" element={<UnderConstruction />} />
+          <Route path="/about" element={<AboutUsPage />} />
+          <Route path="/menu" element={<Menus />} />
           <Route path="/bookings" element={<Bookings />} />
           <Route path="/confirmedBooking" element={<ConfirmedBooking />} />
           <Route path="/orderOnline" element={<UnderConstruction />} />

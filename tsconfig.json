@@ -9,7 +9,7 @@
     "paths": {
       "@components/*": ["components/*"], // Alias for components
       "@utils/*": ["utils/*"], // Alias for utility functions
-      "@libs/utils/*": ["libs/utils/*"] // Alias for utility functions
+      "@libs/*": ["libs/*"] // Alias for utility functions
 
     },
     "moduleResolution": "bundler",

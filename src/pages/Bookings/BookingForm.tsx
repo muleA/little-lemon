@@ -134,8 +134,9 @@ const BookingForm: React.FC<BookingFormProps> = ({
         </select>
       </FormField>
       <button
-        className="button-primary"
-        type="submit"
+          className="inline-block rounded-full hover:bg-grayBackground hover:text-white hover:border-2	
+          mt-8 px-4 py-2 bg-grayBackground text-white border border-transparent hover:border-yellow-400 focus:border-yellow-400"
+          type="submit"
         disabled={!areAllFieldsValid()}
       >
         Make your reservation

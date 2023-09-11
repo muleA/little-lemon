@@ -1,9 +1,10 @@
+
 {
-    "common": {
-      "welcome": "Welcome to our app"
-    },
-    "button": {
-      "label": "Click me"
-    }
-  }
-  
+  "menu": [
+    { "Home": "ቤት" },
+    { "About": "ስለ" },
+    { "Menu":  "ምናሌ" },
+    { "Reservations": "ቀላል ቀመር" },
+    { "Confirmed Booking": "የተማረው ቀላል" }
+  ]
+}
