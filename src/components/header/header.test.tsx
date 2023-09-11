@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect'; // Extend Jest matchers
-import Header from './Header'; // Import your Header component
+import {Header} from './header'; // Import your Header component
 
 test('Header component renders correctly', () => {
   render(<Header />);
