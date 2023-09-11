@@ -17,7 +17,10 @@ export const theme = {
         950: '#1a2e05',
         DEFAULT: '#4E73DF',
       },
-      secondary:"#F4CE14"
+      secondary:"#F4CE14",
+      grayBackground:"#495E57"
     },
+    
   },
+  
 };

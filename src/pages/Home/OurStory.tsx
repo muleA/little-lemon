@@ -1,32 +1,43 @@
-import chefsMarioAndAdrianAImage from './assets/chefs-mario-and-adrian_a.jpg';
-import chefsMarioAndAdrianBImage from './assets/chefs-mario-and-adrian_b.jpg';
-import './OurStory.css';
+import chefsMarioAndAdrianAImage from "./assets/chefs-mario-and-adrian_a.jpg";
+import chefsMarioAndAdrianBImage from "./assets/chefs-mario-and-adrian_b.jpg";
 
 const OurStory = () => {
   return (
-    <section className="container grid our-story">
-      <div className="our-story-description">
-        <h1>Little Lemon</h1>
-        <h2>Chicago</h2>
+    <section className=" grid md:grid-cols-2 grid-cols-2 gap-14 mx-36">
+      <div className="pt-6">
+        <h1 className="col-span-1 text-3xl text-yellow-500 mb-2">Little Lemon</h1>
+        <h2 className=" text-xl mb-4">Addis Ababa</h2>
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do 
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-          Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
-          nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in 
-          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla 
-          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in 
-          culpa qui officia deserunt mollit anim id est laborum. Sed ut 
-          perspiciatis unde omnis iste natus error sit voluptatem accusantium 
-          doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo 
-          inventore veritatis et quasi architecto beatae vitae dicta sunt 
-          explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut 
-          odit aut fugit, sed quia consequuntur magni dolores eos qui ratione 
-          voluptatem sequi nesciunt.
+          At Little Lemon, we take pride in offering a culinary experience like
+          no other. Located in the heart of Addis Ababa, our restaurant combines
+          the finest ingredients with a passion for flavor, creating dishes that
+          are a true delight for your senses.
+        </p>
+
+        <p>
+          Our chefs are masters of their craft, dedicated to bringing you dishes
+          that are both visually stunning and incredibly delicious. We believe
+          in using only the freshest, locally-sourced ingredients to ensure
+          every bite is a burst of authentic flavor.
+        </p>
+
+        <p>
+          Whether you're a connoisseur of fine dining or simply looking for a
+          cozy spot to enjoy a delicious meal, Little Lemon has something for
+          everyone. Join us and savor the taste of Addis Ababa's culinary gem.
         </p>
       </div>
-      <div className="our-story-chefs">
-        <img src={chefsMarioAndAdrianAImage} alt="Chefs Mario and Adrian" />
-        <img src={chefsMarioAndAdrianBImage} alt="Chefs Mario and Adrian" />
+      <div className="flex flex-col gap-4">
+        <img
+          src={chefsMarioAndAdrianAImage}
+          className="max-w-1/2 max-w-full rounded-xl	 "
+          alt="Chefs Mario and Adrian"
+        />
+        <img
+          src={chefsMarioAndAdrianBImage}
+          className="max-w-1/2 max-w-full rounded-xl	"
+          alt="Chefs Mario and Adrian"
+        />
       </div>
     </section>
   );

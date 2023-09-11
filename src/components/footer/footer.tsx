@@ -6,8 +6,9 @@ import { Link } from "react-router-dom";
 export default function Footer2() {
   return (
     <>
-      <footer className=" bg-[#495E57] dark:bg-gray-900 text-white">
-        <div className="mx-auto w-full max-w-screen-xl p-4  lg:py-8">
+    <div className="bg-[#495E57]">
+    <footer className="mx-36  dark:bg-gray-900 text-white ">
+        <div className="w-full max-w-screen-lg p-4  lg:py-8 ">
           <div className="md:flex md:justify-between">
             <div className="mb-6 md:mb-0">
               <Link to="/" className="flex items-center">
@@ -75,6 +76,8 @@ export default function Footer2() {
           </div>
         </div>
       </footer>
+    </div>
+   
     </>
   );
 }

@@ -1,9 +1,9 @@
 {
-    "common": {
-      "welcome": "Welcome to our app"
-    },
-    "button": {
-      "label": "Click me"
-    }
-  }
-  
+  "menu": [
+    { "Home": "Home" },
+    { "About": "About"},
+    { "Menu": "Menu" },
+    { "Reservations": "Reservations" },
+    { "Confirmed Booking": "Confirmed Booking" }
+  ]
+}
