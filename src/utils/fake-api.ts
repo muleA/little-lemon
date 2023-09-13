@@ -20,6 +20,6 @@ const fetchAPI = (date: Date): string[] => {
 };
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-const submitAPI = (formData: any): boolean => true;
+const submitAPI = (_formData: any): boolean => true;
 
 export { fetchAPI, submitAPI };

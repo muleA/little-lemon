@@ -1,9 +1,11 @@
 {
-  "menu": [
-    { "Home": "Home" },
-    { "About": "About"},
-    { "Menu": "Menu" },
-    { "Reservations": "Reservations" },
-    { "Confirmed Booking": "Confirmed Booking" }
-  ]
+    
+  "about": "About",
+  "home": "Home",
+  "menu":"Menu",
+  "reservations": "Reservations",
+  "confirmed_booking": "Confirmed Booking",
+  "login": "Login",
+  "signUp":"Sign Up"
+ 
 }

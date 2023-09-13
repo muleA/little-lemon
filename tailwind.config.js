@@ -15,7 +15,7 @@ export const theme = {
         800: '#059669',
         900: '#365314',
         950: '#1a2e05',
-        DEFAULT: '#4E73DF',
+        DEFAULT: '#84cc16',
       },
       secondary:"#F4CE14",
       grayBackground:"#495E57"

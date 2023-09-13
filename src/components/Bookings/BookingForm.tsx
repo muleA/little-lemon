@@ -1,6 +1,6 @@
 /* eslint-disable no-undef */
-import React, { useState, ChangeEvent, FormEvent } from 'react';
-import FormField from './FormField';
+import React, { useState, ChangeEvent, FormEvent } from "react";
+import FormField from "./FormField";
 
 interface BookingFormProps {
   availableTimes: string[];
@@ -15,19 +15,19 @@ interface BookingFormProps {
 
 const BookingForm: React.FC<BookingFormProps> = ({
   availableTimes,
-  dispatchOnDateChange,
-  submitData,
+/*   dispatchOnDateChange,
+ */  submitData,
 }) => {
-  const minimumDate = new Date().toISOString().split('T')[0];
+  const minimumDate = new Date().toISOString().split("T")[0];
   const defaultTime = availableTimes[0];
   const minimumNumberOfGuests = 1;
   const maximumNumberOfGuests = 10;
-  const occasions = ['Birthday', 'Anniversary'];
-  const invalidDateErrorMessage = 'Please choose a valid date';
-  const invalidTimeErrorMessage = 'Please choose a valid time';
-  const invalidOccasionErrorMessage = 'Please choose a valid occasion';
+  const occasions = ["Birthday", "Anniversary"];
+  const invalidDateErrorMessage = "Please choose a valid date";
+  const invalidTimeErrorMessage = "Please choose a valid time";
+  const invalidOccasionErrorMessage = "Please choose a valid occasion";
   const invalidNumberOfGuestsErrorMessage =
-    'Please enter a number between 1 and 10';
+    "Please enter a number between 1 and 10";
 
   const [date, setDate] = useState<string>(minimumDate);
   const [time, setTime] = useState<string>(defaultTime);
@@ -36,18 +36,21 @@ const BookingForm: React.FC<BookingFormProps> = ({
   );
   const [occasion, setOccasion] = useState<string>(occasions[0]);
 
-  const isDateValid = (): boolean => date !== '';
-  const isTimeValid = (): boolean => time !== '';
-  const isNumberOfGuestsValid = (): boolean => numberOfGuests !== '';
-  const isOccasionValid = (): boolean => occasion !== '';
+  const isDateValid = (): boolean => date !== "";
+  const isTimeValid = (): boolean => time !== "";
+  const isNumberOfGuestsValid = (): boolean => numberOfGuests !== null;
+  const isOccasionValid = (): boolean => occasion !== "";
 
   const areAllFieldsValid = (): boolean =>
-    isDateValid() && isTimeValid() && isNumberOfGuestsValid() && isOccasionValid();
+    isDateValid() &&
+    isTimeValid() &&
+    isNumberOfGuestsValid() &&
+    isOccasionValid();
 
   const handleDateChange = (e: ChangeEvent<HTMLInputElement>): void => {
     setDate(e.target.value);
-    dispatchOnDateChange(e.target.value);
-  };
+/*     dispatchOnDateChange(e.target.value);
+ */  };
 
   const handleTimeChange = (e: ChangeEvent<HTMLSelectElement>): void => {
     setTime(e.target.value);
@@ -134,9 +137,9 @@ const BookingForm: React.FC<BookingFormProps> = ({
         </select>
       </FormField>
       <button
-          className="inline-block rounded-full hover:bg-grayBackground hover:text-white hover:border-2	
+        className="inline-block rounded-full hover:bg-grayBackground hover:text-white hover:border-2	
           mt-8 px-4 py-2 bg-grayBackground text-white border border-transparent hover:border-yellow-400 focus:border-yellow-400"
-          type="submit"
+        type="submit"
         disabled={!areAllFieldsValid()}
       >
         Make your reservation

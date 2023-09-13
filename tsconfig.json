@@ -9,7 +9,7 @@
     "paths": {
       "@components/*": ["components/*"], // Alias for components
       "@utils/*": ["utils/*"], // Alias for utility functions
-      "@libs/*": ["libs/*"] // Alias for utility functions
+      "@libs/*": ["libs/*"], // Alias for utility functions
 
     },
     "moduleResolution": "bundler",
@@ -18,7 +18,7 @@
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "react-jsx",
-
+   
     /* Linting */
     "strict": true,
     "noUnusedLocals": true,
@@ -26,5 +26,4 @@
     "noFallthroughCasesInSwitch": true
   },
   "include": ["src"],
-  "references": [{ "path": "./tsconfig.node.json" }]
 }

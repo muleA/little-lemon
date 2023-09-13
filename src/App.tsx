@@ -1,15 +1,15 @@
-
 import { useEffect } from "react";
 import { Route, Routes, useLocation } from "react-router-dom";
 
 import Layout from "./components/layout/layout";
-import Bookings from "./pages/Bookings";
-import ConfirmedBooking from "./pages/Bookings/ConfirmedBooking";
-import Home from "./pages/Home";
-import NotFound from "./pages/NotFound";
-import UnderConstruction from "./pages/UnderConstruction";
 import AboutUsPage from "./pages/about";
 import Menus from "./pages/menu";
+import Home from "./pages/home";
+import Bookings from "./pages/booking";
+import PageNotFound from "./pages/page-not-found";
+import ConfirmedBooking from "@components/Bookings/ConfirmedBooking";
+import SignInScreen from "@components/auth/sign-in";
+import SignUpScreen from "@components/auth/sign-up";
 
 const App = () => {
   const location = useLocation();
@@ -27,10 +27,11 @@ const App = () => {
           <Route path="/about" element={<AboutUsPage />} />
           <Route path="/menu" element={<Menus />} />
           <Route path="/bookings" element={<Bookings />} />
+          <Route path="/signin" element={<SignInScreen />}></Route>
+          <Route path="/signup" element={<SignUpScreen />}></Route>
           <Route path="/confirmedBooking" element={<ConfirmedBooking />} />
-          <Route path="/orderOnline" element={<UnderConstruction />} />
-          <Route path="/login" element={<UnderConstruction />} />
-          <Route path="*" element={<NotFound />} />
+          <Route path="/orderOnline" element={<PageNotFound />} />
+          <Route path="*" element={<PageNotFound />} />
         </Routes>
       </Layout>
     </>

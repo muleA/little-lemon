@@ -1,14 +1,6 @@
+import { MealCardProps } from "models/meal-card";
 import React from "react";
 import { useNavigate } from "react-router-dom";
-
-interface MealCardProps {
-  meal: {
-    image: string;
-    name: string;
-    price: string;
-    description: string;
-  };
-}
 
 const MealCard: React.FC<MealCardProps> = ({ meal }) => {
   const navigate = useNavigate();

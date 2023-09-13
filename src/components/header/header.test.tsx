@@ -1,10 +1,9 @@
-import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect'; // Extend Jest matchers
-import {Header} from './header'; // Import your Header component
+import { HeaderMegaMenu } from './header';
 
 test('Header component renders correctly', () => {
-  render(<Header />);
+  render(<HeaderMegaMenu />);
 
   // Use toBeInTheDocument matcher
   expect(screen.getByText('Little Lemon logo')).toBeInTheDocument();
@@ -14,7 +13,7 @@ test('Header component renders correctly', () => {
 });
 
 test('Header navigation works correctly', () => {
-  render(<Header />);
+  render(<HeaderMegaMenu />);
 
   // Simulate a click event on the hamburger button
   fireEvent.click(screen.getByTestId('hamburger-button'));

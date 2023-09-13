@@ -1,7 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { fireEvent, render, screen } from '@testing-library/react';
 import BookingForm from './BookingForm';
-import React from 'react';
 describe('Booking form', () => {
   const availableTimes = ['17:00', '17:30'];
   const today = new Date().toISOString().split('T')[0];
