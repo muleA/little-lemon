@@ -3,7 +3,7 @@ const MantineLogo = "./assets/logo.png";
 import { useDisclosure } from "@mantine/hooks";
 import { Link, useLocation } from "react-router-dom";
 import { useTranslation } from "react-i18next";
-import { languages } from "@libs/utils/languages";
+import { useState } from "react";
 type MenuType = {
   name: string;
   path: string;
@@ -14,7 +14,6 @@ export function HeaderMegaMenu() {
     useDisclosure(false);
   const { pathname } = useLocation();
   const { t, i18n } = useTranslation();
-  console.log("drawerOpened", drawerOpened);
 
   const changeLanguage = (lng: string | undefined) => {
     const selectedLanguage = lng;
@@ -32,10 +31,17 @@ export function HeaderMegaMenu() {
       clickable: false,
     },
   ];
+  const [isAmharic, setIsAmharic] = useState(true); // Initially set to Amharic
+
+  const toggleLanguage = () => {
+    setIsAmharic((prevState) => !prevState); 
+    const selectedLanguage = isAmharic ? "en" : "am"; 
+    changeLanguage(selectedLanguage); 
+  };
 
   return (
-    <nav className="bg-white dark:bg-primary-900 fixed sticky w-full z-20 top-0 left-0 dark:border-primary-600">
-      <div className="px-4">
+    <nav className="bg-white dark:bg-primary-900 fixed sticky w-full mx-auto z-20 top-0 left-0 dark:border-primary-600">
+      <div className="px-4 md:mx-36">
         <div className="flex justify-between items-center h-full">
           <div className=" ">
             {/* Logo on the left */}
@@ -81,27 +87,28 @@ export function HeaderMegaMenu() {
               </ul>
               {/* Language Selector */}
               <div className="p-4 space-y-2">
-                {languages.map((language) => (
-                  <button
-                    key={language.code}
-                    className={`p-2 flex flex-row items-center text-sm font-medium text-primary-700   ${
-                      i18n.language === language.code ? "text-primary-200" : ""
-                    }`}
-                    onClick={() => {
-                      changeLanguage(language.code);
-                      closeDrawer();
-                    }}
-                  >
-                    <span className="text-md">{language.name}</span>
-                    <span className="ml-1">
-                      <img
-                        src={language.flagIcon}
-                        alt={language.name}
-                        className="w-5 h-5"
-                      />
-                    </span>
-                  </button>
-                ))}
+              <button onClick={toggleLanguage} className="flex items-center">
+                {isAmharic ? (
+                  <>
+                    <img
+                      src="https://img.icons8.com/?size=512&id=t3NE3BsOAQwq&format=png"
+                      alt="amharic"
+                      className="w-5 h-5"
+                    />
+                    English
+                    
+                  </>
+                ) : (
+                  <>
+                    <img
+                      src="./icons8-ethiopia-48.png"
+                      alt="english"
+                      className="w-5 h-5"
+                    />
+                    አማርኛ
+                  </>
+                )}
+              </button>
               </div>
             </div>
           )}
@@ -130,39 +137,45 @@ export function HeaderMegaMenu() {
           <div className="hidden md:flex space-x-4 items-center">
             <div className="flex flex-row right-1">
               {/* Language Selector */}
-              {languages.map((language) => (
-                <button
-                  key={language.code}
-                  className={`p-2 flex flex-row items-center border border-primary-300 text-sm font-medium text-primary-700
-                    ${
-                      i18n.language === language.code ? "text-yellow-600" : ""
-                    }`}
-                  onClick={() => changeLanguage(language.code)}
-                >
-                  <span className="text-md">{language.name}</span>
-                  <span className="ml-1">
+
+              <button onClick={toggleLanguage} className="flex items-center">
+                {isAmharic ? (
+                  <>
                     <img
-                      src={language.flagIcon}
-                      alt={language.name}
+                      src="https://img.icons8.com/?size=512&id=t3NE3BsOAQwq&format=png"
+                      alt="amharic"
                       className="w-5 h-5"
                     />
-                  </span>
-                </button>
-              ))}
+                    English
+                    
+                  </>
+                ) : (
+                  <>
+                    <img
+                      src="./icons8-ethiopia-48.png"
+                      alt="english"
+                      className="w-5 h-5"
+                    />
+                    አማርኛ
+                  </>
+                )}
+              </button>
             </div>
             {/* Sign-in and Sign-up buttons on the right */}
             <Link
               className={`text-primary-700  hover:text-primary   
-              font-medium rounded-lg text-md px-2 py-2 text-center md-mr-0 ${pathname ==='signin' ? "text-yellow-600 " : ""
-            }`}
+              font-medium rounded-lg text-md px-2 py-2 text-center md-mr-0 ${
+                pathname === "signin" ? "text-yellow-600 " : ""
+              }`}
               to={"signin"}
             >
               Sign In
             </Link>
             <Link
               className={`text-primary-700 border border-green-700 hover:text-white hover:bg-primary-900 font-medium
-   rounded-md text-md px-4 py-1 text-center ${pathname ==='signup' ? "text-yellow-600 " : ""
-  }`}
+   rounded-md text-md px-4 py-1 text-center ${
+     pathname === "signup" ? "text-yellow-600 " : ""
+   }`}
               to={"signup"}
             >
               Sign Up

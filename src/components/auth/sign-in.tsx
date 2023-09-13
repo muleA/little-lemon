@@ -53,7 +53,7 @@ const SignInScreen = () => {
         <Brand />
         {/* sign up form  */}
         <form
-          className="bg-white w-96 mt-6 p-4 rounded-lg shadow-lg"
+          className="bg-white w-96 mt-2 p-4 rounded-lg shadow-lg"
           onSubmit={handleSubmit}
         >
           <div className="flex flex-col space-y-6">
@@ -70,7 +70,7 @@ const SignInScreen = () => {
           </div>
           <Button text="Sign In" />
           <Link to="/signup">
-            <p className="text-base text-primary text-center my-6 hover:underline">
+            <p className="text-base text-primary-900 text-center my-2 hover:underline">
               Need an account ?
             </p>
           </Link>

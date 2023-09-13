@@ -9,7 +9,8 @@
     "paths": {
       "@components/*": ["components/*"], // Alias for components
       "@utils/*": ["utils/*"], // Alias for utility functions
-      "@libs/*": ["libs/*"] // Alias for utility functions
+      "@libs/*": ["libs/*"], // Alias for utility functions
+      "testing-library__jest-dom": ["path/to/your/types/testing-library__jest-dom"]
 
     },
     "moduleResolution": "bundler",

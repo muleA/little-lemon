@@ -5,7 +5,7 @@ const GoogleSignIn = ({ text }: any) => {
   return (
     <>
       {/* //google signin g */}
-      <div className="border-t border-gray-200 mt-6">
+      <div className="border-t border-gray-200 mt-2">
         <p className="text-center text-gray-400 py-4">OR </p>
         <div
           className="flex items-center space-x-3 justify-center border border-gray-300 rounded-lg w-full py-3 
