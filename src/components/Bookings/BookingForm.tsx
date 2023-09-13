@@ -15,8 +15,8 @@ interface BookingFormProps {
 
 const BookingForm: React.FC<BookingFormProps> = ({
   availableTimes,
-  dispatchOnDateChange,
-  submitData,
+/*   dispatchOnDateChange,
+ */  submitData,
 }) => {
   const minimumDate = new Date().toISOString().split("T")[0];
   const defaultTime = availableTimes[0];
@@ -38,7 +38,7 @@ const BookingForm: React.FC<BookingFormProps> = ({
 
   const isDateValid = (): boolean => date !== "";
   const isTimeValid = (): boolean => time !== "";
-  const isNumberOfGuestsValid = (): boolean => numberOfGuests !== "";
+  const isNumberOfGuestsValid = (): boolean => numberOfGuests !== null;
   const isOccasionValid = (): boolean => occasion !== "";
 
   const areAllFieldsValid = (): boolean =>
@@ -49,8 +49,8 @@ const BookingForm: React.FC<BookingFormProps> = ({
 
   const handleDateChange = (e: ChangeEvent<HTMLInputElement>): void => {
     setDate(e.target.value);
-    dispatchOnDateChange(e.target.value);
-  };
+/*     dispatchOnDateChange(e.target.value);
+ */  };
 
   const handleTimeChange = (e: ChangeEvent<HTMLSelectElement>): void => {
     setTime(e.target.value);

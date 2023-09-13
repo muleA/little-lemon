@@ -3,7 +3,7 @@ import Brand from '@components/Form/Brand'
 import Button from '@components/Form/Button'
 import GoogleSignIn from '@components/Form/GoogleSignIn'
 import TextField from '@components/Form/TextField'
-import React, { useState } from 'react'
+import  { useState } from 'react'
 import { Link } from 'react-router-dom'
 
 
@@ -37,7 +37,7 @@ const SignUpScreen = () => {
         { id: 1, type: "text", placeholder: "Name", value: `${userInput.name}`, name: 'name' },
         { id: 2, type: "email", placeholder: "Email", value: `${userInput.email}`, name: 'email' },
         { id: 3, type: "text", placeholder: "Profile Picture Link", value: `${userInput.image}`, name: 'image' },
-        { id: 4, type: "password", placeholder: "Password", value: `${userInput.password}`, name: 'password' },
+        { id: 4, type: "password", placeholder: "Password", value: `${userInput.password}`, name: 'password' }
     ]
 
     return (
