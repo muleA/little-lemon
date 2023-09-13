@@ -1,11 +1,11 @@
-import chefsMarioAndAdrianAImage from "./assets/chefs-mario-and-adrian_a.jpg";
-import chefsMarioAndAdrianBImage from "./assets/chefs-mario-and-adrian_b.jpg";
 
 const OurStory = () => {
   return (
-    <section className=" grid md:grid-cols-2 grid-cols-2 gap-14 mx-36">
-      <div className="pt-6">
-        <h1 className="col-span-1 text-3xl text-yellow-500 mb-2">Little Lemon</h1>
+    <section className=" grid md:grid-cols-2 grid-cols-1 md:grid-cols-2 md:gap-14 gap-4 md:mx-36 mx-2">
+      <div className="md:pt-6 pt-2 ">
+        <h1 className="col-span-1 text-3xl text-yellow-500 mb-2">
+          Little Lemon
+        </h1>
         <h2 className=" text-xl mb-4">Addis Ababa</h2>
         <p>
           At Little Lemon, we take pride in offering a culinary experience like
@@ -29,12 +29,12 @@ const OurStory = () => {
       </div>
       <div className="flex flex-col gap-4">
         <img
-          src={chefsMarioAndAdrianAImage}
+          src={'./assets/chefs-mario-and-adrian_a.jpg'}
           className="max-w-1/2 max-w-full rounded-xl	 "
           alt="Chefs Mario and Adrian"
         />
         <img
-          src={chefsMarioAndAdrianBImage}
+          src={'./assets/chefs-mario-and-adrian_b.jpg'}
           className="max-w-1/2 max-w-full rounded-xl	"
           alt="Chefs Mario and Adrian"
         />

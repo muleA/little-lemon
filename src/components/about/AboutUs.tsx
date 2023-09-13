@@ -5,9 +5,9 @@ import { About } from "models/about-item";
 
 const AboutUs: React.FC = () => {
   return (
-    <div className="max-w-screen-xl mx-auto my-12 px-6">
+    <div className="max-w-screen-xl mx-auto my-12 md:px-6 px-2">
       <h1 className="text-4xl poppins pb-4">Why Choose Us</h1>
-      <p className="text-gray-500 text-md poppins w-2/4">
+      <p className="text-gray-500 text-md poppins  w-full mx-2">
         At Little Lemon, we believe that dining should be an experience that
         tantalizes all your senses. Our journey began twenty years ago when we
         set out to redefine the culinary landscape within our community. Since

@@ -1,10 +1,13 @@
-
 {
-  "menu": [
-    { "Home": "ቤት" },
-    { "About": "ስለ" },
-    { "Menu":  "ምናሌ" },
-    { "Reservations": "ቀላል ቀመር" },
-    { "Confirmed Booking": "የተማረው ቀላል" }
-  ]
-}
+    
+    "about": "ስለ እኛ",
+    "home": "መነሻ",
+    "menu":"ምግብ ዝርዝር",
+    "reservations": "እዘዝ",
+    "confirmed_booking": "ትእዛዞች",
+    "login": "ግባ",
+    "about Us":"ስለ እኛ",
+    "signUp":"አሁን ይቀላቀሉ"
+   
+  }
+  

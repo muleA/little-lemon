@@ -7,7 +7,7 @@ export default function Footer2() {
   return (
     <>
     <div className="bg-[#495E57]">
-    <footer className="mx-36  dark:bg-gray-900 text-white ">
+    <footer className="md:mx-36 mx-2  dark:bg-gray-900 text-white ">
         <div className="w-full max-w-screen-lg p-4  lg:py-8 ">
           <div className="md:flex md:justify-between">
             <div className="mb-6 md:mb-0">
@@ -35,11 +35,11 @@ export default function Footer2() {
               </address>
             </div>
             <div>
-              <h2 className="mb-6 text-sm font-semibold text-white uppercase dark:text-white">
+              <h2 className="md:mb-6 mb-2 underline  text-lg font-semibold text-white uppercase dark:text-white">
                 Legal
               </h2>
               <ul className="text-white dark:text-gray-400 font-medium">
-                <li className="mb-4">
+                <li className="mb-1">
                   <Link to="/" className="hover:underline">
                     Privacy Policy
                   </Link>
