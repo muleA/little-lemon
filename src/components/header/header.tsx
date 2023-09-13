@@ -68,7 +68,7 @@ export function HeaderMegaMenu() {
                     <Link
                       to={menuItem.path}
                       onClick={closeDrawer}
-                      className={`block text-md text-primary-900 ${
+                      className={`block text-md  hover:text-primary  text-primary-900 ${
                         pathname === menuItem.path
                           ? "text-yellow-600 current-location"
                           : ""
@@ -84,8 +84,8 @@ export function HeaderMegaMenu() {
                 {languages.map((language) => (
                   <button
                     key={language.code}
-                    className={`p-2 flex flex-row items-center text-sm font-medium text-gray-700 hover:bg-gray-100 focus:bg-gray-200 focus:outline-none ${
-                      i18n.language === language.code ? "bg-gray-200" : ""
+                    className={`p-2 flex flex-row items-center text-sm font-medium text-primary-700   ${
+                      i18n.language === language.code ? "text-primary-200" : ""
                     }`}
                     onClick={() => {
                       changeLanguage(language.code);
@@ -115,10 +115,8 @@ export function HeaderMegaMenu() {
                   <li key={menuItem.path}>
                     <Link
                       to={menuItem.path}
-                      className={`block py-8 text-md radius-md p-4 text-center text-primary-900 rounded ${
-                        pathname === menuItem.path
-                          ? "text-yellow-600 current-location"
-                          : ""
+                      className={`block py-8  hover:text-primary text-md radius-md p-4 text-center text-primary-900 rounded ${
+                        pathname === menuItem.path ? "text-yellow-600 " : ""
                       }  hover-bg-primary-100 md:hover:bg-transparent md:hover-text-primary-700 md:p-0 md:dark:hover-text-primary-500 dark-text-white dark:hover-bg-primary-700 dark:hover-text-white md:dark:hover-bg-transparent dark-border-primary-700`}
                     >
                       {menuItem.name}
@@ -135,9 +133,10 @@ export function HeaderMegaMenu() {
               {languages.map((language) => (
                 <button
                   key={language.code}
-                  className={`p-2 flex flex-row items-center border border-gray-300 text-sm font-medium text-gray-700 hover:bg-gray-100 focus:bg-gray-200 focus:outline-none ${
-                    i18n.language === language.code ? "bg-gray-200" : ""
-                  }`}
+                  className={`p-2 flex flex-row items-center border border-primary-300 text-sm font-medium text-primary-700
+                    ${
+                      i18n.language === language.code ? "text-yellow-600" : ""
+                    }`}
                   onClick={() => changeLanguage(language.code)}
                 >
                   <span className="text-md">{language.name}</span>
@@ -153,16 +152,18 @@ export function HeaderMegaMenu() {
             </div>
             {/* Sign-in and Sign-up buttons on the right */}
             <Link
-              className="text-primary-700  hover:text-primary   
-              font-medium rounded-lg text-md px-2 py-2 text-center md-mr-0"
-              to={""}
+              className={`text-primary-700  hover:text-primary   
+              font-medium rounded-lg text-md px-2 py-2 text-center md-mr-0 ${pathname ==='signin' ? "text-yellow-600 " : ""
+            }`}
+              to={"signin"}
             >
               Sign In
             </Link>
             <Link
-              className="text-primary-700 border border-green-700 hover:text-white hover:bg-primary-900 font-medium
-   rounded-md text-md px-4 py-1 text-center"
-              to={""}
+              className={`text-primary-700 border border-green-700 hover:text-white hover:bg-primary-900 font-medium
+   rounded-md text-md px-4 py-1 text-center ${pathname ==='signup' ? "text-yellow-600 " : ""
+  }`}
+              to={"signup"}
             >
               Sign Up
             </Link>

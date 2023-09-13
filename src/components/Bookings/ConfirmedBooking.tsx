@@ -12,7 +12,7 @@ const ConfirmedBooking = () => {
 
   return (
     <div className="container mx-auto py-8">
-      <div className="bg-white p-8 rounded-lg shadow-md">
+      <div className="bg-white p-8 rounded-lg">
         <h2 className="text-2xl font-semibold text-gray-800 mb-4">Confirmed Booking</h2>
         <div className="mb-4">
           <strong>Booking Number:</strong> {bookingDetails.bookingNumber}
