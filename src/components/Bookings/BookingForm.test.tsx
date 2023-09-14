@@ -4,7 +4,6 @@ import BookingForm from './BookingForm';
 describe('Booking form', () => {
   const availableTimes = ['17:00', '17:30'];
   const today = new Date().toISOString().split('T')[0];
-  const dispatchOnDateChange = jest.fn();
   const submitData = jest.fn();
 
   test('should correctly render all fields and their default values', async () => {
@@ -46,9 +45,7 @@ describe('Booking form', () => {
 
   test('should successfully submit the form with default values', () => {
     render(
-      <BookingForm availableTimes={availableTimes} submitData={submitData} dispatchOnDateChange={function (): void {
-        throw new Error('Function not implemented.');
-      } } />
+      <BookingForm availableTimes={availableTimes} submitData={submitData} />
     );
 
     const submitButton = screen.getByRole('button');
@@ -66,7 +63,6 @@ describe('Booking form', () => {
     render(
       <BookingForm
         availableTimes={availableTimes}
-        dispatchOnDateChange={dispatchOnDateChange}
         submitData={submitData}
       />
     );
@@ -86,7 +82,6 @@ describe('Booking form', () => {
     render(
       <BookingForm
         availableTimes={availableTimes}
-        dispatchOnDateChange={dispatchOnDateChange}
         submitData={submitData}
       />
     );
