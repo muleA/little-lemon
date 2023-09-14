@@ -1,9 +1,9 @@
-import { FaBars, FaTimes } from "react-icons/fa";
 const MantineLogo = "./assets/logo.png";
 import { useDisclosure } from "@mantine/hooks";
 import { Link, useLocation } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { useState } from "react";
+import { Burger } from "@mantine/core";
 type MenuType = {
   name: string;
   path: string;
@@ -12,6 +12,8 @@ type MenuType = {
 export function HeaderMegaMenu() {
   const [drawerOpened, { toggle: toggleDrawer, close: closeDrawer }] =
     useDisclosure(false);
+
+  const label = drawerOpened ? "Close navigation" : "Open navigation";
   const { pathname } = useLocation();
   const { t, i18n } = useTranslation();
 
@@ -34,9 +36,9 @@ export function HeaderMegaMenu() {
   const [isAmharic, setIsAmharic] = useState(true); // Initially set to Amharic
 
   const toggleLanguage = () => {
-    setIsAmharic((prevState) => !prevState); 
-    const selectedLanguage = isAmharic ? "en" : "am"; 
-    changeLanguage(selectedLanguage); 
+    setIsAmharic((prevState) => !prevState);
+    const selectedLanguage = isAmharic ? "en" : "am";
+    changeLanguage(selectedLanguage);
   };
 
   return (
@@ -56,13 +58,13 @@ export function HeaderMegaMenu() {
           </div>
 
           {/* Mobile Menu Button (Hamburger Icon) */}
-          <button className="md:hidden" onClick={toggleDrawer}>
-            {drawerOpened ? (
-              <FaTimes className="text-primary-700" />
-            ) : (
-              <FaBars className="text-primary-700" />
-            )}
-          </button>
+
+          <Burger
+            className="md:hidden text-primary-700"
+            opened={drawerOpened}
+            onClick={toggleDrawer}
+            aria-label={label}
+          />
 
           {/* Mobile Drawer */}
           {drawerOpened && (
@@ -87,28 +89,27 @@ export function HeaderMegaMenu() {
               </ul>
               {/* Language Selector */}
               <div className="p-4 space-y-2">
-              <button onClick={toggleLanguage} className="flex items-center">
-                {isAmharic ? (
-                  <>
-                    <img
-                      src="https://img.icons8.com/?size=512&id=t3NE3BsOAQwq&format=png"
-                      alt="amharic"
-                      className="w-5 h-5"
-                    />
-                    English
-                    
-                  </>
-                ) : (
-                  <>
-                    <img
-                      src="./icons8-ethiopia-48.png"
-                      alt="english"
-                      className="w-5 h-5"
-                    />
-                    አማርኛ
-                  </>
-                )}
-              </button>
+                <button onClick={toggleLanguage} className="flex items-center">
+                  {isAmharic ? (
+                    <>
+                      <img
+                        src="https://img.icons8.com/?size=512&id=t3NE3BsOAQwq&format=png"
+                        alt="amharic"
+                        className="w-5 h-5"
+                      />
+                      English
+                    </>
+                  ) : (
+                    <>
+                      <img
+                        src="./icons8-ethiopia-48.png"
+                        alt="english"
+                        className="w-5 h-5"
+                      />
+                      አማርኛ
+                    </>
+                  )}
+                </button>
               </div>
             </div>
           )}
@@ -147,7 +148,6 @@ export function HeaderMegaMenu() {
                       className="w-5 h-5"
                     />
                     English
-                    
                   </>
                 ) : (
                   <>
