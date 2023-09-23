@@ -24,7 +24,7 @@ const Hero: React.FC = () => {
 
         <div className="md:col-span-1 col-span-3">
           <img
-            className="md:w-1/2 w-full h-[24rem] mb-[-4.375rem] justify-self-end rounded-lg object-cover"
+            className="md:w-1/2 w-full h-[20rem]  justify-self-end rounded-lg object-cover"
             src={restaurantFoodImage}
             alt="Restaurant food"
           />

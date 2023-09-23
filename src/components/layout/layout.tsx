@@ -10,7 +10,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
   return (
     <>
       <HeaderMegaMenu/>
-      <main className='z-0 '>{children}</main>
+      <main className='z-0'>{children}</main>
       <Footer />
     </>
   );

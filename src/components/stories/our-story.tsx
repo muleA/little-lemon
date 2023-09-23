@@ -27,7 +27,7 @@ const OurStory = () => {
           everyone. Join us and savor the taste of Addis Ababa's culinary gem.
         </p>
       </div>
-      <div className="flex flex-col gap-4">
+      <div className="flex flex-col gap-4 my-2">
         <img
           src={'./assets/chefs-mario-and-adrian_a.jpg'}
           className="max-w-1/2 max-w-full rounded-xl	 "

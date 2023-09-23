@@ -6,7 +6,7 @@ const MealCard: React.FC<MealCardProps> = ({ meal }) => {
   const navigate = useNavigate();
 
   return (
-    <article className="md:w-100 w-full mt-100 my-2 h-full px-2 bg-[#edefee] ">
+    <article className="md:w-100 w-full mt-100 my-2 mb-2 h-full px-2 bg-[#edefee] ">
       <div className="bg-[#edefee] hover:cursor-pointer bg-palette-card/80 flex w-full flex-col rounded-md backdrop-blur-[10px] backdrop-filter">
         <img
           className="h-full w-full rounded-md object-cover transition-transform hover:scale-105 sm:h-48"

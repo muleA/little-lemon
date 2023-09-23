@@ -10,6 +10,9 @@ import PageNotFound from "./pages/page-not-found";
 import ConfirmedBooking from "@components/Bookings/ConfirmedBooking";
 import SignInScreen from "@components/auth/sign-in";
 import SignUpScreen from "@components/auth/sign-up";
+import Loader from "@libs/ui/loader";
+import SSRCompatibleSuspense from "@libs/ui/ssr-suspense";
+import ErrorBoundary from "@libs/ui/error-boundary";
 
 const App = () => {
   const location = useLocation();
@@ -21,19 +24,32 @@ const App = () => {
 
   return (
     <>
-      <Layout>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<AboutUsPage />} />
-          <Route path="/menu" element={<Menus />} />
-          <Route path="/bookings" element={<Bookings />} />
-          <Route path="/signin" element={<SignInScreen />}></Route>
-          <Route path="/signup" element={<SignUpScreen />}></Route>
-          <Route path="/confirmedBooking" element={<ConfirmedBooking />} />
-          <Route path="/orderOnline" element={<PageNotFound />} />
-          <Route path="*" element={<PageNotFound />} />
-        </Routes>
-      </Layout>
+      <ErrorBoundary>
+        <SSRCompatibleSuspense
+          fallback={
+            <div
+              id="root"
+              className="flex min-h-screen items-center justify-center"
+            >
+              <Loader size={32} />
+            </div>
+          }
+        >
+          <Layout>
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/about" element={<AboutUsPage />} />
+              <Route path="/menu" element={<Menus />} />
+              <Route path="/bookings" element={<Bookings />} />
+              <Route path="/signin" element={<SignInScreen />}></Route>
+              <Route path="/signup" element={<SignUpScreen />}></Route>
+              <Route path="/confirmedBooking" element={<ConfirmedBooking />} />
+              <Route path="/orderOnline" element={<PageNotFound />} />
+              <Route path="*" element={<PageNotFound />} />
+            </Routes>
+          </Layout>
+        </SSRCompatibleSuspense>
+      </ErrorBoundary>
     </>
   );
 };

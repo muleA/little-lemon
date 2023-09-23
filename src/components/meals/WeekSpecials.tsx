@@ -5,7 +5,7 @@ import { meals } from "@libs/utils/meals";
 
 const WeekSpecials = () => {
   return (
-    <section className="mx-36">
+    <section className="mx-36 mb-2">
       <div className="flex  mb-4 justify-between items-center">
         <h2 className="text-2xl font-normal font-markazi leading-none">
           This week specials!

@@ -16,9 +16,16 @@ export const theme = {
         900: '#365314',
         950: '#1a2e05',
         DEFAULT: '#84cc16',
+        light: '#3498db',
+        dark: '#21618c',
       },
       secondary: '#F4CE14',
       grayBackground: '#495E57',
+    },
+    dark: {
+      light: '#2c3e50',
+      DEFAULT: '#34495e',
+      dark: '#2c3e50',
     },
     fontSize: {
       'xs': '.75rem',
@@ -37,5 +44,14 @@ export const variants = {
   extend: {
     backgroundColor: ['active'],
     textColor: ['visited'], // Example of adding a visited variant for text color
+    fontFamily: {
+      // Here, 'playfair' is the font family name, and you provide the font stack.
+      playfair: ['Playfair Display', 'serif'],
+      
+      // You can add more custom font families as needed.
+      nunito: ['Nunito', 'sans-serif'],
+      montserrat: ['Montserrat', 'sans-serif'],
+      // ...
+    },
   },
 };
