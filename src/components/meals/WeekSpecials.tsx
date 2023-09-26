@@ -5,7 +5,7 @@ import { meals } from "@libs/utils/meals";
 
 const WeekSpecials = () => {
   return (
-    <section className="mx-36 mb-2">
+    <section className="md:mx-36 mx-2  mb-2">
       <div className="flex  mb-4 justify-between items-center">
         <h2 className="text-2xl font-normal font-markazi leading-none">
           This week specials!
@@ -20,7 +20,7 @@ const WeekSpecials = () => {
         </Link>
       </div>
 
-      <div className=" grid  grid-cols-1 md:grid-cols-3 gap-4">
+      <div className=" grid  grid-cols- md:grid-cols-3 gap-4">
         {meals.map((meal, index) => (
           <MealCard key={index} meal={meal} />
         ))}

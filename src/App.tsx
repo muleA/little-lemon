@@ -1,6 +1,5 @@
 import { useEffect } from "react";
 import { Route, Routes, useLocation } from "react-router-dom";
-
 import Layout from "./components/layout/layout";
 import AboutUsPage from "./pages/about";
 import Menus from "./pages/menu";
@@ -31,7 +30,7 @@ const App = () => {
               id="root"
               className="flex min-h-screen items-center justify-center"
             >
-              <Loader size={32} />
+              <Loader />
             </div>
           }
         >

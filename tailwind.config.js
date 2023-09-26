@@ -47,7 +47,7 @@ export const variants = {
     fontFamily: {
       // Here, 'playfair' is the font family name, and you provide the font stack.
       playfair: ['Playfair Display', 'serif'],
-      
+
       // You can add more custom font families as needed.
       nunito: ['Nunito', 'sans-serif'],
       montserrat: ['Montserrat', 'sans-serif'],

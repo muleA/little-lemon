@@ -1,47 +1,44 @@
 const MantineLogo = "./assets/logo.png";
-import { useDisclosure } from "@mantine/hooks";
 import { Link, useLocation } from "react-router-dom";
-import { useTranslation } from "react-i18next";
-import { useState } from "react";
-import { Burger } from "@mantine/core";
 import Typed from "react-typed";
-import { ToggleTheme } from "../../libs/ui/theme-toggler"; // Adjust the import path
+ import { ToggleTheme } from "../../libs/ui/theme-toggler"; // Adjust the import path
+import { T } from "@libs/translation/T";
+import LanguageSelector from "@libs/translation/language-selector";
+import Drawer from '@mui/material/Drawer';
+import List from '@mui/material/List';
+import ListItem from '@mui/material/ListItem';
+import ListItemText from '@mui/material/ListItemText';
+import { useState } from "react";
+import IconButton from '@mui/material/IconButton';
+import { FaBars } from "react-icons/fa";
 
 type MenuType = {
   name: string;
   path: string;
-  clickable: boolean;
 };
-export function HeaderMegaMenu() {
-  const [drawerOpened, { toggle: toggleDrawer, close: closeDrawer }] =
-    useDisclosure(false);
+export function Header() {
 
-  const label = drawerOpened ? "Close navigation" : "Open navigation";
-  const { pathname } = useLocation();
-  const { t, i18n } = useTranslation();
+  const [dialogOpen, setDialogOpen] = useState(false);
 
-  const changeLanguage = (lng: string | undefined) => {
-    const selectedLanguage = lng;
-    i18n.changeLanguage(selectedLanguage);
+  const openDialog = () => {
+    setDialogOpen(true);
   };
+
+  const closeDialog = () => {
+    setDialogOpen(false);
+  };
+  const { pathname } = useLocation();
 
   const menus: MenuType[] = [
-    { name: t("home"), path: "/", clickable: true },
-    { name: t("about"), path: "/about", clickable: true },
-    { name: t("menu"), path: "/menu", clickable: true },
-    { name: t("reservations"), path: "/bookings", clickable: true },
+    { name: T("Home"), path: "/" },
+    { name: T("about"), path: "/about" },
+    { name: T("menu"), path: "/menu" },
+    { name: T("reservations"), path: "/bookings" },
     {
-      name: t("confirmed_booking"),
+      name: T("confirmed_booking"),
       path: "/confirmedBooking",
-      clickable: false,
     },
   ];
-  const [isAmharic, setIsAmharic] = useState(true); // Initially set to Amharic
-  const toggleLanguage = () => {
-    setIsAmharic((prevState) => !prevState);
-    const selectedLanguage = isAmharic ? "en" : "am";
-    changeLanguage(selectedLanguage);
-  };
 
   return (
     <>
@@ -56,7 +53,7 @@ export function HeaderMegaMenu() {
                 typeSpeed={100}
                 backSpeed={100}
                 loop
-              />
+              /> 
             </h1>
           </div>
         </div>
@@ -76,68 +73,38 @@ export function HeaderMegaMenu() {
                 />
               </Link>
             </div>
+            <IconButton
+  edge="start"
+  color="primary"
+  onClick={openDialog}
+  className="block md:hidden" // Hide on medium and large screens
+>
+  <FaBars />
+</IconButton>
 
-            {/* Mobile Menu Button (Hamburger Icon) */}
 
-            <Burger
-              className="md:hidden text-primary-700"
-              opened={drawerOpened}
-              onClick={toggleDrawer}
-              aria-label={label}
-              style={{ color: "red" }}
-            />
-
-            {/* Mobile Drawer */}
-            {drawerOpened && (
-              <div className="fixed inset-0 z-50  bg-white dark:bg-dark-6 overflow-y-auto">
-                {/* Drawer Content */}
-                <ul className="p-4 space-y-4">
-                  {menus.map((menuItem: MenuType) => (
-                    <li key={menuItem.path}>
-                      <Link
-                        to={menuItem.path}
-                        onClick={closeDrawer}
-                        className={`block text-md  hover:text-primary  text-primary-900 ${
-                          pathname === menuItem.path
-                            ? "text-yellow-600 current-location"
-                            : ""
-                        } hover:text-primary-700`}
-                      >
-                        {menuItem.name}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-                {/* Language Selector */}
-                <div className="p-4 space-y-2">
-                  <button
-                    onClick={toggleLanguage}
-                    className="flex items-center"
-                  >
-                    {isAmharic ? (
-                      <>
-                        <img
-                          src="https://img.icons8.com/?size=512&id=t3NE3BsOAQwq&format=png"
-                          alt="amharic"
-                          className="w-5 h-5"
-                        />
-                        English
-                      </>
-                    ) : (
-                      <>
-                        <img
-                          src="./icons8-ethiopia-48.png"
-                          alt="english"
-                          className="w-5 h-5"
-                        />
-                        አማርኛ
-                      </>
-                    )}
-                  </button>
-                </div>
-              </div>
-            )}
-
+            <Drawer
+  anchor="left"
+  open={dialogOpen}
+  onClose={closeDialog}
+>
+  <List>
+    {menus.map((menuItem: MenuType) => (
+      <ListItem
+        button
+        key={menuItem.path}
+        component={Link}
+        to={menuItem.path}
+        onClick={closeDialog}
+        className={`${
+          pathname === menuItem.path ? 'text-yellow-600 current-location' : ''
+        }`}
+      >
+        <ListItemText primary={menuItem.name} />
+      </ListItem>
+    ))}
+  </List>
+</Drawer>
             <div className="hidden md:flex space-x-6 items-center">
               {/* Desktop menus */}
               <ul className="flex flex-wrap justify-between items-center p-4 md:p-0 mt-4 font-medium border border-primary-100 rounded-lg bg-primary-50 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-white dark:bg-primary-800 md:dark:bg-primary-900 dark:border-primary-700">
@@ -160,32 +127,11 @@ export function HeaderMegaMenu() {
             </div>
 
             <div className="hidden md:flex space-x-4 items-center">
+            <ToggleTheme />
+
               <div className="flex flex-row right-1">
-                {/* Language Selector */}
-                <ToggleTheme />
-                <button onClick={toggleLanguage} className="flex items-center">
-                  {isAmharic ? (
-                    <>
-                      <img
-                        src="https://img.icons8.com/?size=512&id=t3NE3BsOAQwq&format=png"
-                        alt="amharic"
-                        className="w-5 h-5"
-                      />
-                      English
-                    </>
-                  ) : (
-                    <>
-                      <img
-                        src="./icons8-ethiopia-48.png"
-                        alt="english"
-                        className="w-5 h-5"
-                      />
-                      አማርኛ
-                    </>
-                  )}
-                </button>
+                <LanguageSelector />
               </div>
-              {/* Sign-in and Sign-up buttons on the right */}
               <Link
                 className={`text-primary-700  hover:text-primary   
               font-medium rounded-lg text-md px-2 py-2 text-center md-mr-0 ${
