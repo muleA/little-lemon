@@ -1,6 +1,6 @@
-import React, { ReactNode } from 'react';
-import Footer from '@components/footer/footer';
-import { HeaderMegaMenu } from '@components/header/header';
+import React, { ReactNode } from "react";
+import Footer from "@components/footer/footer";
+import { Header } from "@components/header/header";
 
 interface LayoutProps {
   children: ReactNode;
@@ -9,8 +9,8 @@ interface LayoutProps {
 const Layout: React.FC<LayoutProps> = ({ children }) => {
   return (
     <>
-      <HeaderMegaMenu/>
-      <main className='z-0 '>{children}</main>
+      <Header />
+      <main className="z-0">{children}</main>
       <Footer />
     </>
   );

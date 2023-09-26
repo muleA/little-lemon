@@ -1,0 +1,22 @@
+{
+  "Home": {
+    "am": "መነሻ",
+    "en": "Home"
+  },
+  "about": {
+    "am": "በስርዓት",
+    "en": "About"
+  },
+  "menu": {
+    "am": "ምንድን",
+    "en": "Menu"
+  },
+  "reservations": {
+    "am": "ገበታ ምዝገባ",
+    "en": "Reservations"
+  },
+  "confirmed_booking": {
+    "am": "የተመዘገበ ገበታ",
+    "en": "Confirmed Booking"
+  }
+}

@@ -2,11 +2,13 @@ import React from "react";
 import AboutItem from "./AboutItem";
 import aboutData from "@libs/utils/about-us-data";
 import { About } from "models/about-item";
+import { useTranslation } from "react-i18next";
 
 const AboutUs: React.FC = () => {
+  const {t}=useTranslation()
   return (
     <div className="max-w-screen-xl mx-auto my-12 md:px-6 px-2">
-      <h1 className="text-4xl poppins pb-4">Why Choose Us</h1>
+      <h1 className="text-4xl poppins pb-4">{t('about:about_us_intro')}</h1>
       <p className="text-gray-500 text-md poppins  w-full mx-2">
         At Little Lemon, we believe that dining should be an experience that
         tantalizes all your senses. Our journey began twenty years ago when we

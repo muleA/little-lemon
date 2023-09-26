@@ -3,7 +3,7 @@ import Socials from "@libs/utils/social";
 import { Key } from "react";
 import { Link } from "react-router-dom";
 
-export default function Footer2() {
+export default function Footer() {
   return (
     <>
     <div className="bg-[#495E57]">
