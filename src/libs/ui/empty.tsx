@@ -1,6 +1,6 @@
-import { Text } from '@mantine/core';
 import { FaArrowRight } from 'react-icons/fa';
 import {  useNavigate } from 'react-router-dom';
+import { Typography } from '@mui/material';
 
 function Empty() {
   const router = useNavigate();
@@ -292,14 +292,14 @@ function Empty() {
           <div className="flex w-full justify-center">
             <button
               onClick={() => router("/")}
-              className="group relative inline-flex w-screen items-center justify-center overflow-hidden rounded-lg bg-gradient-to-br from-cyan-500 to-blue-500 p-0.5 text-sm font-medium text-gray-900 hover:text-white focus:outline-none focus:ring-4 focus:ring-cyan-200 group-hover:from-cyan-500 group-hover:to-blue-500 md:w-full"
+              className="group relative inline-flex w-screen items-center justify-center overflow-hidden rounded-lg bg-gradient-to-br from-cyan-500 to-blue-500 p-0.5 Typography-sm font-medium Typography-gray-900 hover:Typography-white focus:outline-none focus:ring-4 focus:ring-cyan-200 group-hover:from-cyan-500 group-hover:to-blue-500 md:w-full"
             >
               <span className="relative flex h-8 w-full items-center justify-center space-x-5 rounded-md bg-white px-5 py-2.5 transition-all duration-75 ease-in group-hover:bg-opacity-0">
-                <Text size="xs">No data is available</Text>
+                <Typography>No data is available</Typography>
                 {(
                   <span className="flex items-center space-x-2 ">
                     <FaArrowRight />
-                    <Text size="xs">Go Back</Text>
+                    <Typography>Go Back</Typography>
                   </span>
                 )}
               </span>
