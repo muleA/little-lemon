@@ -1,6 +1,6 @@
-import React, { useEffect } from "react";
+import  { lazy, useEffect } from "react";
 import { useLocation } from "react-router-dom";
-import Layout from "./components/layout/layout";
+const Layout = lazy(() => import("./components/layout/layout"));
 import Loader from "@libs/ui/loader";
 import SSRCompatibleSuspense from "@libs/ui/ssr-suspense";
 import ErrorBoundary from "@libs/ui/error-boundary";
@@ -30,10 +30,9 @@ const App = () => {
             </div>
           }
         >
-          {" "}
           <AuthProvider>
             <Layout>
-              <AppRoutes /> {/* Use the AppRoutes component here */}
+              <AppRoutes /> 
             </Layout>
           </AuthProvider>
         </SSRCompatibleSuspense>

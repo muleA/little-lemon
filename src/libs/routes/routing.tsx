@@ -13,11 +13,11 @@ const AppRoutes = () => {
   return (
     <Routes>
       <Route path="/" element={<Home />} />
-      <Route path="**" element={<PageNotFound />} />
-      <Route path="/signin" element={<SignInScreen />} />
-      <Route path="/signup" element={<SignUpScreen />} />
+      <Route path="*/*" element={<PageNotFound />} />
+      <Route path="/sign-in" element={<SignInScreen />} />
+      <Route path="/sign-up" element={<SignUpScreen />} />
       <Route path="/about" element={<AboutUsPage />} />
-      <Route path="/menus" element={<Menus />} />
+      <Route path="/menu" element={<Menus />} />
       <Route path="/bookings" element={<Bookings />} />
       <Route
         path="/confirmedBooking"

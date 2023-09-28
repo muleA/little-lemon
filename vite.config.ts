@@ -2,6 +2,10 @@
 import { defineConfig } from "vite";
 import { resolve } from "path";
 export default defineConfig({
+  // vite.config.js
+build: {
+  chunkSizeWarningLimit: 1000 * 1000, // Adjust to a different limit in bytes
+},
   resolve: {
     alias: {
       "@components": resolve(__dirname, "src/components"),
