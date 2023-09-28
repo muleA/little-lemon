@@ -3,12 +3,12 @@ import { Link, useLocation } from "react-router-dom";
 import Typed from "react-typed";
 import { ToggleTheme } from "../../libs/ui/theme-toggler";
 import { T } from "@libs/translation/T";
-import LanguageSelector from "@libs/translation/language-selector";
 import Drawer from "@mui/material/Drawer";
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import ListItemText from "@mui/material/ListItemText";
-import { useState } from "react";
+import { lazy, useState } from "react";
+const LanguageSelector = lazy(() => import("@libs/translation/language-selector"));
 
 type MenuType = {
   name: string;
@@ -37,6 +37,7 @@ export function Header() {
       path: "/confirmedBooking",
     },
   ];
+  console.log("pathname",pathname)
 
   return (
     <>
@@ -46,7 +47,7 @@ export function Header() {
             <h1 className="text-md mx-2">
               <Typed
                 strings={[
-                  "Get 10% Off Your First Order and Free Delivery for New Customers Savor Delightful Meals at Amazing Discounts",
+                  T("advert-message")
                 ]}
                 typeSpeed={100}
                 backSpeed={100}
@@ -128,20 +129,20 @@ export function Header() {
               <Link
                 className={`text-primary-700  hover:text-primary   
               font-medium rounded-lg text-md px-2 py-2 text-center md-mr-0 ${
-                pathname === "signin" ? "text-yellow-600 " : ""
+                pathname ==="/sign-in" ? "text-yellow-600 " : ""
               }`}
-                to={"signin"}
+                to={"sign-in"}
               >
-                Sign In
+                {T("Sign-In")}
               </Link>
               <Link
                 className={`text-primary-700 border border-green-700 hover:text-white hover:bg-primary-900 font-medium
    rounded-md text-md px-4 py-1 text-center ${
-     pathname === "signup" ? "text-yellow-600 " : ""
+     pathname === "sign-up" ? "text-yellow-600 " : ""
    }`}
-                to={"signup"}
+                to={"/sign-up"}
               >
-                Sign Up
+                {T("sign-up")}
               </Link>
             </div>
           </div>

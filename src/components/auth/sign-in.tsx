@@ -3,7 +3,8 @@ import Brand from "@components/Form/Brand";
 import Button from "@components/Form/Button";
 import GoogleSignIn from "@components/Form/GoogleSignIn";
 import TextField from "@components/Form/TextField";
-import  { useState } from "react";
+import useAuth from "@libs/hooks/use-auth";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 
 const SignInScreen = () => {
@@ -11,7 +12,7 @@ const SignInScreen = () => {
     email: "",
     password: "",
   });
-
+  const signInUser = useAuth();
   // handle change
   const handleChange = (e: { target: any }) => {
     const { value, name } = e.target;
@@ -25,8 +26,7 @@ const SignInScreen = () => {
   //handle submit form
   const handleSubmit = async (e: { preventDefault: () => void }) => {
     e.preventDefault();
-    /*         await signInUser(userInput.email, userInput.password)
-     */
+    await signInUser(userInput.email, userInput.password);
   };
 
   //form inputs
@@ -52,10 +52,8 @@ const SignInScreen = () => {
         {/* logo  */}
         <Brand />
         {/* sign up form  */}
-        <form
-          className="bg-white w-96 mt-2 p-4 rounded-lg shadow-lg"
-          onSubmit={handleSubmit}
-        >
+        <form className="bg-white w-96 mt-6 p-4 rounded-lg shadow-lg" onSubmit={handleSubmit}>
+
           <div className="flex flex-col space-y-6">
             {Inputs.map((input) => (
               <TextField

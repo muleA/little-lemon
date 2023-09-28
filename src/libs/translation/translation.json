@@ -4,19 +4,31 @@
     "en": "Home"
   },
   "about": {
-    "am": "በስርዓት",
+    "am": "ስለ እኛ",
     "en": "About"
   },
   "menu": {
-    "am": "ምንድን",
-    "en": "Menu"
+    "am": "የምግብ ዝርዝሮች",
+    "en": "Menus"
   },
   "reservations": {
-    "am": "ገበታ ምዝገባ",
+    "am": "ቦታዎችን እዘዝ",
     "en": "Reservations"
   },
   "confirmed_booking": {
-    "am": "የተመዘገበ ገበታ",
+    "am": "የተያዙ ቦታዎች",
     "en": "Confirmed Booking"
+  },
+    "Sign-In":{
+      "am":"ግባ",
+      "en":"Sign In"
+  },
+  "sign-up":{
+    "am":"ተመዝገብ",
+    "en":"Sign Up"
+  },
+  "advert-message":{
+    "am":"ከመጀመሪያ ትዕዛዝህ 10% ቅናሽ እና ለአዲስ ደንበኞች ነፃ ማድረስ በሚያስደንቅ ቅናሾች አስደሳች ምግቦችን አጣጥሙ",
+    "en":"Get 10% Off Your First Order and Free Delivery for New Customers Savor Delightful Meals at Amazing Discounts"
   }
 }
