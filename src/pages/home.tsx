@@ -3,7 +3,7 @@ import WeekSpecials from "@components/meals/WeekSpecials";
 import OurStory from "@components/stories/our-story";
 import Testimonials from "@components/testimonial/Testimonials";
 
-const Home = () => {
+export const Home = () => {
   return (
     <>
       <Hero />
@@ -14,4 +14,3 @@ const Home = () => {
   );
 };
 
-export default Home;

@@ -1,6 +1,6 @@
 import Foods from "@components/menu/menus";
 
-export default function Menus(){
+export const Menus=()=>{
     return(<>
     <Foods/>
     </>)

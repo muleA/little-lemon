@@ -10,7 +10,7 @@
       "@components/*": ["components/*"], // Alias for components
       "@utils/*": ["utils/*"], // Alias for utility functions
       "@libs/*": ["libs/*"], // Alias for utility functions
-
+       
     },
     "resolveJsonModule": true,
     "moduleResolution": "bundler",
