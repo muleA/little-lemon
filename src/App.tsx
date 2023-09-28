@@ -30,12 +30,12 @@ const App = () => {
             </div>
           }
         >
-          <AuthProvider>
-            <Layout>
+{/*           <AuthProvider>
+ */}            <Layout>
               <AppRoutes /> 
             </Layout>
-          </AuthProvider>
-        </SSRCompatibleSuspense>
+{/*           </AuthProvider>
+ */}        </SSRCompatibleSuspense>
       </ErrorBoundary>
     </>
   );
