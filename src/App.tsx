@@ -12,6 +12,9 @@ import SignUpScreen from "@components/auth/sign-up";
 import Loader from "@libs/ui/loader";
 import SSRCompatibleSuspense from "@libs/ui/ssr-suspense";
 import ErrorBoundary from "@libs/ui/error-boundary";
+import AuthProvider from "@libs/hooks/auth-provider";
+import PublicRoute from "@libs/routes/PublicRoute";
+import PrivateRoute from "@libs/routes/PrivateRoute";
 
 const App = () => {
   const location = useLocation();
@@ -34,19 +37,36 @@ const App = () => {
             </div>
           }
         >
-          <Layout>
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/about" element={<AboutUsPage />} />
-              <Route path="/menu" element={<Menus />} />
-              <Route path="/bookings" element={<Bookings />} />
-              <Route path="/signin" element={<SignInScreen />}></Route>
-              <Route path="/signup" element={<SignUpScreen />}></Route>
-              <Route path="/confirmedBooking" element={<ConfirmedBooking />} />
-              <Route path="/orderOnline" element={<PageNotFound />} />
-              <Route path="*" element={<PageNotFound />} />
-            </Routes>
-          </Layout>
+          {" "}
+          <AuthProvider>
+            <Layout>
+              <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/about" element={<AboutUsPage />} />
+                <Route path="/menu" element={<Menus />} />
+                <Route path="/bookings" element={<Bookings />} />
+                <PublicRoute
+                  exact
+                  path="/signin"
+                  element={<SignInScreen />}
+                ></PublicRoute>
+                <PublicRoute
+                  exact
+                  path="/signup"
+                  element={<SignUpScreen />}
+                ></PublicRoute>
+                <PrivateRoute
+                  exact
+                  path="/confirmedBooking"
+                  element={<ConfirmedBooking />}
+                >
+                  {" "}
+                </PrivateRoute>
+                <Route path="/orderOnline" element={<PageNotFound />} />
+                <Route path="*" element={<PageNotFound />} />
+              </Routes>
+            </Layout>
+          </AuthProvider>
         </SSRCompatibleSuspense>
       </ErrorBoundary>
     </>

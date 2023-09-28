@@ -1,15 +1,14 @@
 const MantineLogo = "./assets/logo.png";
 import { Link, useLocation } from "react-router-dom";
 import Typed from "react-typed";
- import { ToggleTheme } from "../../libs/ui/theme-toggler"; // Adjust the import path
+import { ToggleTheme } from "../../libs/ui/theme-toggler"; // Adjust the import path
 import { T } from "@libs/translation/T";
 import LanguageSelector from "@libs/translation/language-selector";
-import Drawer from '@mui/material/Drawer';
-import List from '@mui/material/List';
-import ListItem from '@mui/material/ListItem';
-import ListItemText from '@mui/material/ListItemText';
+import Drawer from "@mui/material/Drawer";
+import List from "@mui/material/List";
+import ListItem from "@mui/material/ListItem";
+import ListItemText from "@mui/material/ListItemText";
 import { useState } from "react";
-import IconButton from '@mui/material/IconButton';
 import { FaBars } from "react-icons/fa";
 
 type MenuType = {
@@ -17,7 +16,6 @@ type MenuType = {
   path: string;
 };
 export function Header() {
-
   const [dialogOpen, setDialogOpen] = useState(false);
 
   const openDialog = () => {
@@ -53,7 +51,7 @@ export function Header() {
                 typeSpeed={100}
                 backSpeed={100}
                 loop
-              /> 
+              />
             </h1>
           </div>
         </div>
@@ -73,38 +71,33 @@ export function Header() {
                 />
               </Link>
             </div>
-            <IconButton
-  edge="start"
-  color="primary"
-  onClick={openDialog}
-  className="block md:hidden" // Hide on medium and large screens
->
-  <FaBars />
-</IconButton>
+            <button
+              onClick={openDialog}
+              className="block sm:hidden md:hidden text-primary-900" // Hide on medium and large screens
+            >
+              <FaBars />
+            </button>
 
-
-            <Drawer
-  anchor="left"
-  open={dialogOpen}
-  onClose={closeDialog}
->
-  <List>
-    {menus.map((menuItem: MenuType) => (
-      <ListItem
-        button
-        key={menuItem.path}
-        component={Link}
-        to={menuItem.path}
-        onClick={closeDialog}
-        className={`${
-          pathname === menuItem.path ? 'text-yellow-600 current-location' : ''
-        }`}
-      >
-        <ListItemText primary={menuItem.name} />
-      </ListItem>
-    ))}
-  </List>
-</Drawer>
+            <Drawer anchor="left" open={dialogOpen} onClose={closeDialog}>
+              <List>
+                {menus.map((menuItem: MenuType) => (
+                  <ListItem
+                    button
+                    key={menuItem.path}
+                    component={Link}
+                    to={menuItem.path}
+                    onClick={closeDialog}
+                    className={`${
+                      pathname === menuItem.path
+                        ? "text-yellow-600 current-location"
+                        : ""
+                    }`}
+                  >
+                    <ListItemText primary={menuItem.name} />
+                  </ListItem>
+                ))}
+              </List>
+            </Drawer>
             <div className="hidden md:flex space-x-6 items-center">
               {/* Desktop menus */}
               <ul className="flex flex-wrap justify-between items-center p-4 md:p-0 mt-4 font-medium border border-primary-100 rounded-lg bg-primary-50 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-white dark:bg-primary-800 md:dark:bg-primary-900 dark:border-primary-700">
@@ -127,7 +120,7 @@ export function Header() {
             </div>
 
             <div className="hidden md:flex space-x-4 items-center">
-            <ToggleTheme />
+              <ToggleTheme />
 
               <div className="flex flex-row right-1">
                 <LanguageSelector />
