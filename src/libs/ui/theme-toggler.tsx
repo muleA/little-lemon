@@ -7,7 +7,6 @@ function getCurrentTheme(): 'dark' | 'light' {
 
 export const ToggleTheme = () => {
   const currentTheme: 'dark' | 'light' = getCurrentTheme();
-   console.log("currentTheme",currentTheme)
   const toggleTheme = () => {
     const html = document.documentElement;
     if (currentTheme === 'light') {
@@ -21,7 +20,7 @@ export const ToggleTheme = () => {
 
   return (
     <div>
-      <button className="mr-5 mt-1 text-primary-900" onClick={toggleTheme}>
+      <button id='theme-toggler' aria-label='theme-toggler' className="mr-5 mt-1 text-primary-900" onClick={toggleTheme}>
         {currentTheme === 'light' ? <FaMoon /> : <FaSun />}
       </button>
     </div>

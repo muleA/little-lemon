@@ -12,8 +12,10 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({ customer }) => {
         className="w-32 mx-auto my-2 rounded-full"
         src={customer.image}
         alt={customer.fullName}
+        loading="lazy"
       />
-      <h4 className="text-center mb-4">{customer.fullName}</h4>
+            <p className="text-center text-md mb-4">{customer.fullName}</p> {/* Use <h2> for the name */}
+
       <span className="flex flex-row text-xl mb-2">
         {customer.rating.map((ratingPoint, index) => (
           <FaStar

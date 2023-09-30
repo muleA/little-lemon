@@ -26,6 +26,7 @@ const Hero: React.FC = () => {
           <img
             className="md:w-1/2 w-full h-[20rem]  justify-self-end rounded-lg object-cover"
             src={restaurantFoodImage}
+            loading="lazy"
             alt="Restaurant food"
           />
         </div>

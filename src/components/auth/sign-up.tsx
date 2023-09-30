@@ -3,6 +3,7 @@ import Brand from "@components/Form/Brand";
 import Button from "@components/Form/Button";
 import GoogleSignIn from "@components/Form/GoogleSignIn";
 import TextField from "@components/Form/TextField";
+import useAuth from "@libs/hooks/use-auth";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
@@ -13,7 +14,7 @@ const SignUpScreen = () => {
     image: "",
     password: "",
   });
-
+const signUpUser=useAuth()
   //handle change
   const handleChange = (e: any) => {
     const { value, name } = e.target;
@@ -27,8 +28,8 @@ const SignUpScreen = () => {
   //handle submit form
   const handleSubmit = async (e: { preventDefault: () => void }) => {
     e.preventDefault();
-    /*         await signUpUser(userInput.email, userInput.password ,  userInput.name,userInput.image )
-     */
+          await signUpUser(userInput.email, userInput.password ,  userInput.name,userInput.image )
+     
   };
 
   //form inputs
@@ -47,13 +48,13 @@ const SignUpScreen = () => {
       value: `${userInput.email}`,
       name: "email",
     },
-   /*  {
+     {
       id: 3,
       type: "text",
       placeholder: "Profile Picture Link",
       value: `${userInput.image}`,
       name: "image",
-    }, */
+    }, 
     {
       id: 4,
       type: "password",
