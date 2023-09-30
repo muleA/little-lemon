@@ -1,4 +1,5 @@
 import { initializeApp } from "firebase/app";
+import 'firebase/auth';
 
 // Access environment variables using import.meta.env
 
@@ -14,5 +15,4 @@ const firebaseConfig = {
 const initializeAuthentication = () => {
   return initializeApp(firebaseConfig);
 };
-
 export default initializeAuthentication;
