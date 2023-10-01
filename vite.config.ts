@@ -5,6 +5,8 @@ export default defineConfig({
   // vite.config.js
 build: {
   chunkSizeWarningLimit: 1000 * 1000, // Adjust to a different limit in bytes
+  sourcemap: true,
+
 },
   resolve: {
     alias: {

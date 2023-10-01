@@ -92,7 +92,7 @@ export function Header() {
                     onClick={closeDialog}
                     className={`${
                       pathname === menuItem.path
-                        ? "text-yellow-600 current-location"
+                        ? "bg-yellow-600 current-location"
                         : ""
                     }`}
                     aria-current={pathname === menuItem.path ? "page" : undefined}
@@ -110,7 +110,7 @@ export function Header() {
                       <Link
                         to={menuItem.path}
                         className={`block py-8 hover:text-primary text-md radius-md p-4 text-center text-primary-900 rounded ${
-                          pathname === menuItem.path ? "text-rose-950 " : ""
+                          pathname === menuItem.path ? "text-yellow-500 " : ""
                         } hover-bg-primary-100 md:hover:bg-transparent md:hover-text-primary-700 md:p-0 md:dark:hover-text-primary-500 dark-text-white dark:hover-bg-primary-700 dark:hover-text-white md:dark:hover-bg-transparent dark-border-primary-700`}
                       >
                         {menuItem.name}

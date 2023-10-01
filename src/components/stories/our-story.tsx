@@ -1,9 +1,8 @@
-
 const OurStory = () => {
   return (
     <section className=" grid md:grid-cols-2 grid-cols-1 md:grid-cols-2 md:gap-14 gap-4 md:mx-36 mx-2">
       <div className="md:pt-6 pt-2 ">
-        <h1 className="col-span-1 text-3xl text-yellow-500 mb-2">
+        <h1 className="col-span-1 text-3xl text-primary-600 mb-2">
           Little Lemon
         </h1>
         <h2 className=" text-xl mb-4">Addis Ababa</h2>
@@ -28,16 +27,19 @@ const OurStory = () => {
         </p>
       </div>
       <div className="flex flex-col gap-4 my-2">
-        <img
-          src={'./assets/chefs-mario-and-adrian_a.jpg'}
-          className="max-w-1/2 max-w-full rounded-xl	 "
-          alt="Chefs Mario and Adrian"
-        />
-        <img
-          src={'./assets/chefs-mario-and-adrian_b.jpg'}
-          className="max-w-1/2 max-w-full rounded-xl	"
-          alt="Chefs Mario and Adrian"
-        />
+      <img
+  src={'./assets/chefs-mario-and-adrian_a.jpg'}
+  className="max-w-1/2 max-w-full rounded-xl aspect-w-3 aspect-h-2"
+  alt="Chefs Mario and Adrian"
+  loading="lazy"
+/>
+<img
+  src={'./assets/chefs-mario-and-adrian_b.jpg'}
+  className="max-w-1/2 max-w-full rounded-xl aspect-w-3 aspect-h-2"
+  alt="Chefs Mario and Adrian"
+  loading="lazy"
+/>
+
       </div>
     </section>
   );
